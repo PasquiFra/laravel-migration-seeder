@@ -17,7 +17,15 @@ class TrainFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'company' => fake()->company(),
+            'dep_station' => fake()->city(),
+            'arr_station' => fake()->city(),
+            'dep_time' => fake()->dateTimeThisMonth('+1 days'), fake()->time('H:i'),
+            'arr_time' => fake()->dateTimeThisMonth('+2 days'), fake()->time('H:i'),
+            'train_code' => fake()->bothify('??-####'),
+            'n_carriage' => fake()->numberBetween(1, 10),
+            'on_time' => fake()->boolean(),
+            'cancelled' => 'on_time' === false ? (fake()->boolean()) : 'False',
         ];
     }
 }
