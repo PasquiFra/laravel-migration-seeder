@@ -25,7 +25,7 @@ class TrainFactory extends Factory
             'train_code' => fake()->bothify('??-####'),
             'n_carriage' => fake()->numberBetween(1, 10),
             'on_time' => fake()->boolean(),
-            'cancelled' => 'on_time' === false ? (fake()->boolean()) : 'False',
+            'cancelled' => fake()->boolean(),
         ];
     }
 }
